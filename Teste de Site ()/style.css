@@ -1,0 +1,36 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Khitan+Small+Script&display=swap');
+
+*{
+    
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh; /*Height 100vh, serve para não haver espaços em cima da pagina HTML.*/
+    background-color: #2970e1;
+}
+h1{
+    font-family: 'Noto Serif Khitan Small Script' sans-serif;
+    text-align: center;
+    font-size: 3em;
+    color: rgba(5, 5, 147, 0.672);
+}
+.principal{
+    height: 200px;
+    margin: 0;
+    padding: 0;
+    background-color: #2970e1;
+}
+
+
+
+
+
+
+
+
+
+
+
+

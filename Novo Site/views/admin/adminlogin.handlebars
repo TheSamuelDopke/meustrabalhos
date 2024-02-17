@@ -1,0 +1,19 @@
+Página de Listagem dos Logins:
+<hr>
+{{#each register}}
+
+    <div>
+        <p>{{nome}}</p>
+        <p>{{email}}</p>
+        <p>{{nascimento}}</p>
+        <p>{{senha}}</p>
+        
+        <hr>
+        
+        
+        <form action="/admin/logins/deletar" method="post">
+            <input type="hidden" name="id" value="{{_id}}">
+            <button type="submit">Deletar Login</button>
+        </form>
+    </div>
+{{/each}}

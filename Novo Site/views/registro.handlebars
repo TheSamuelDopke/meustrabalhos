@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registre-se no Samo's Projects</title>
+    <link rel="stylesheet" href="./css/registro.css">
+    <link rel="stylesheet" href="./css/msg.css">
+</head>
+<body>
+   
+        <a href="/"><h1 class="h1">Samo's Projects</h1></a>
+        
+     {{#if success_msg}}
+        <div class="success_msg">{{success_msg}}</div>
+     {{/if}}
+
+
+     {{#if error_msg}}
+        <div class="error_msg">{{error_msg}}</div>
+     {{/if}}
+        
+    <main>
+        <section>
+            <h2>Registre-se:</h1>
+            <hr>
+            <form action="/registro/add" method="post">
+                <p><label for="nome" >Nome Completo:</label>
+                <input type="text" name="nome" id="nome" required></p>
+
+                <p><label for="nascimento" >Data de Nascimento:</label>
+                <input type="date" name="nascimento" id="nascimento" required></p>
+
+                <p><label for="email">Email:</label>
+                <input type="email" name="email" id="email" required></p>
+
+                <p><label for="senha">Senha:</label>
+                <input type="password" name="senha" id="senha" required></p>
+
+                
+           
+
+
+
+        </section>
+        <button type="submit">Registrar</button>
+
+ </form>
+
+
+
+
+
+    </main>
+   
+</body>
+</html>
+

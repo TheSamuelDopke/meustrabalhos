@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family= Playfair :ital,wght@1,300 & display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair', sans-serif;
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(120deg, #8de1ecd8, #6f87d3da);
+    display: center;
+}
+
+div#horario{
+    display: flex;
+    align-items: center;
+    width: 300px; /* Defina a largura desejada */
+    height: 100px;
+    background: transparent;
+    border-radius: 15px;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, .5);
+    justify-content: center;
+    margin-left: 1600px;
+    margin-top: 50px;
+}
+
+.horario div{
+    height: 100px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: rgb(8, 8, 8);
+    background: linear-gradient(#8de0c4d8, #64afdad8);
+    box-shadow: 0px 0px 0px ;
+    border-radius: px;
+    letter-spacing: 2px;
+}
+
+header{
+    background-color: rgb(125, 221, 208);
+    box-shadow: 0px 3px 10px #24aeb8;
+
+
+
+
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 6rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h1{
+    color: white;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav-item{
+    margin: 0 15px;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 1.15rem;
+    color: white;
+    font-weight: 700;
+}
+
+.login-button button{
+    border: none;
+    background-color: #0187a7;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+a#a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+.mobile-menuicon{
+    display: none;
+}
+.mobile-menu{
+    display: none;
+}
+@media screen and (max-width: 730px){
+    .nav-bar{
+        padding: 1.5rem 4rem;
+    }
+    .nav-item{
+        display: none;
+    }
+    .login-button{
+        display: none;
+
+    }
+    .mobile-menuicon{
+        display: block;
+    }
+    .mobile-menuicon button{
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+    .mobile-menu ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+    .mobile-menu .nav-item{
+        display: block;
+        padding-top: 1.2rem;
+    }
+    .mobile-menu .login-button{
+        display: block;
+        padding: 1rem 2rem;
+    }
+    .mobile-menu .login-button button{
+        width: 100%;
+
+    }
+    .open{
+        display: block;
+    }
+}
+    div#functentrar{
+    width: 400px;
+    height: 400px;
+    background: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 750px;
+    flex-direction: column;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px 5px ;
+    ;
+    
+    }
+    input#email{
+        width: 200px;
+        justify-content: space-between;
+
+
+    }
+    input#enterbutton{
+        
+        padding: 10px 15px;
+        background-color: #50beda;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,57 @@
+     <header> 
+
+        <a href="/"><h1>Samo's Projects</h1></a>
+        
+                <form action="">
+                    <label for="idemail" class="configemail">Email:</label>
+                    <input type="email" name="email" id="idemail" class="configemail">
+                    <p id="nav-separator"></p>
+                    <label for="idsenha" class="configsenha">Senha:</label>
+                    <input type="password" name="senha" id="idsenha" class="configsenha">
+
+                    <p id="p-register">Não tem uma conta? <a href="">Registre-se aqui</a></p>
+                </form>
+                
+   </header>
+        
+    <main>
+        
+        <article id="apresentacao">
+            <h1>Olá, Visitante!</h1>
+            <hr>
+            <p>Boas-vindas, me chamo Samuel Pedro Dopke e está é a página principal do meu site! </p>
+                <p>Após fazer seu registro e login no site, poderá acessar todos os meus projetos, fiz isso por uma questão de segurança.</p>
+            
+
+
+
+
+
+
+        </article>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+    
+
+
+    <footer>
+        <p>Todo esse site foi criado e projetado por: Samuel Pedro Dopke</p>
+
+    </footer>
+
+
+    <script src="../js/main.js"></script>

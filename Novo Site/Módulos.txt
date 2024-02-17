@@ -1,0 +1,54 @@
+Utilizados no Site:
+
+Baixados:
+
+Mongoose: Conexão ao Banco de Dados
+
+npm install --save mongoose
+
+
+
+Express Session: Middleware, permissão com base nos dados!
+
+npm install --save express-session
+
+
+
+Connect Flash: Mensagens de erro!
+
+npm install --save connect-flash
+
+
+
+Body Parser: Coleta de dados para o backend!
+
+npm install --save body-parser
+
+
+
+Express: Servidor!
+
+npm install express --save
+
+
+
+Handlebars: Para funcionalidades em HTML
+
+npm install --save express-handlebars
+
+
+Axios: Ferramenta HTTP para acessar uma rota Post por outra rota Post
+
+npm install axios
+-----------------------------------------------------------------------------------------------------------------
+
+
+Sem necessidade de baixar:
+
+require('path');
+
+
+
+
+
+Usando o MongoDB como Banco de Dados!

@@ -1,0 +1,42 @@
+.success_msg{
+    text-align: center;
+    background-color: lightgreen;
+    width: 100vw;
+    margin: auto;
+    
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+.error_msg{
+    width: 100vw;
+    text-align: center;
+    background-color: lightcoral;
+    
+    margin: auto;
+    
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+@media screen and (max-width: 530px){
+    .error_msg{
+        font-size: 20px;
+        
+        padding-bottom: 10px;
+        padding-top: 10px;
+        background-color: lightcoral;
+    }
+
+    .success_msg{
+        font-size: 20px;
+        
+        padding-bottom: 10px;
+        padding-top: 10px;
+        background-color: greenyellow;
+    }
+}
