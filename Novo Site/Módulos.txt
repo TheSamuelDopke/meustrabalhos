@@ -40,6 +40,20 @@ npm install --save express-handlebars
 Axios: Ferramenta HTTP para acessar uma rota Post por outra rota Post
 
 npm install axios
+
+
+Script para codificar senha!
+
+npm install --save bcryptjs
+
+<----------------------------------------------------------------------------------------IMPORTANTANTE__ABAIXO---------------------------------------------------------------------------------------->
+
+Passportjs: middleware de autenticação específico para o Node.js com funções também de login com base em facebook, google, twitter etc.
+Utilizaremos o "Local" pois nossa base de dados fica no próprio PC!
+
+Para baixar o passport no projeto: npm install --save passport
+
+A estratégia usada para autenticação: npm install --save passport-local
 -----------------------------------------------------------------------------------------------------------------
 
 

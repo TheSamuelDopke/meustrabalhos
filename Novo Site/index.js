@@ -6,13 +6,38 @@ const path = require('path')
 const expressSession = require('express-session')
 const flash = require('connect-flash')
 
+
+//Middleware PASSPORT para confirmação de autenticação! configuração na pasta CONFIG!
+const passport = require("passport")
+require("./config/authentication")(passport)
+
+
+//Script para senhas
+const bcrypt = require('bcryptjs')
+
+
+
+//Servidor!
 const express = require('express')
 const open = express();
 
+
+
+//Base de dados!
 require('./databases/register')
 const Register = mongoose.model("register")
 
+
 const axios = require('axios')
+
+
+
+
+
+
+
+
+
 //Configurações!
 
 
@@ -22,15 +47,38 @@ const axios = require('axios')
         resave: true,
         saveUninitialized: true
     }))
+
+    //Passport middleware de autenticação
+    open.use(passport.initialize())
+    open.use(passport.session())
+
+
+
     open.use(flash()) //Sempre usar o Connect-Flash logo após o Express-Session!
+
+
+    // ORDEM: 1° Sessão, - 2° Passport, - 3° Connect-Flash
+    //--------------------IMPORTANTE SEGUIR SEMPRE A ORDEM ACIMA------------------
 
 
 
 
     //Middleware
     open.use((req, res, next)=> {
+
+        //Variáveis Globais!
         res.locals.success_msg = req.flash("success_msg")
+
         res.locals.error_msg = req.flash("error_msg")
+
+
+
+        //Mensagem de erro caso a autenticação falhe!
+        res.locals.error = req.flash("error")
+
+        //Passa os dados do usuário para essa Variável, caso não tenha passa o valor nulo!
+        res.locals.user = req.user || null;
+
         next()
     }) 
 
@@ -72,19 +120,20 @@ const axios = require('axios')
 
 
 
+
+
 //Rotas:
     //Principal:
         open.get('/', (req, res) =>{
-            Register.find().lean().then((register) =>{
-                res.render('index.handlebars', {register: register})
-            })
+            
+                res.render('./index/index.handlebars')
             
         })
 
 
     //Registro:
         open.get('/registro', (req, res) =>{
-            res.render('registro.handlebars')
+            res.render('./index/registro.handlebars')
         })
 
 
@@ -94,24 +143,47 @@ const axios = require('axios')
             Register.findOne({email: req.body.email}).then((email) =>{
                 //Verificação se já existe o email no banco de dados!
                 if(email){
-                    req.flash("error_msg", "Email já está em uso")
+                    req.flash("error_msg", "Email já está em uso!")
                     res.redirect('/registro')
                 }
                 else{
-                    if(req.body.nome == 0 || req.body.nome.length < 5){
+                    const dataAtual = new Date();
+                    const anoAtual = dataAtual.getFullYear();
+                    const inputDate = req.body.dataNascimento
+                    const partesData = inputDate.split('-');
+                    const ano = partesData[0]
+
+
+                    //Retirar os espaços brancos no input .trim()
+                    var nome = req.body.inputnome.trim()
+
+                    var senha = req.body.senha.trim()
+                    
+                
+                    if(req.body.inputnome == "" || req.body.inputnome.length < 5 || req.body.inputnome == undefined || nome == 0 || nome == "" || /\s{2}/.test(req.body.inputnome)){
                         var erros = 1
-                        req.flash("error_msg", "O seu nome completo deve possuir pelo menos 5 letras!")
+                        req.flash("error_msg", "Digite um nome válido!")
+                        
                     }
 
                     if(req.body.email == 0 || req.body.email.length < 10){
                         var erros = 1
-                        req.flash("error_msg", "O email é inválido!")
+                        req.flash("error_msg", "Digite um email válido!")
+                        
                     }
     
-                    if(req.body.senha == 0 || req.body.senha.length < 6){
+                    if(req.body.senha == 0 || req.body.senha.length < 6 || req.body.senha == undefined || senha == 0 || senha == "" || /\s{1}/.test(req.body.senha)){
                         var erros = 1
-                        req.flash("error_msg", "A senha deve conter pelo menos 6 digitos!")
+                        req.flash("error_msg", "Digite uma senha válida!")
+                        
                     }
+
+                    if(req.body.dataNascimento == "" || req.body.dataNascimento == undefined || ano > anoAtual - 10 || ano < anoAtual - 120){
+                        var erros = 1
+                        req.flash("error_msg", "Digite uma data válida!")
+                    }
+
+                
     
                     if(erros > 0){
                         res.redirect('/registro')
@@ -120,20 +192,37 @@ const axios = require('axios')
                     else{
 
                         const novoRegistro = {
-                            nome: req.body.nome,
+                            nome: req.body.inputnome,
                             email: req.body.email,
-                            nascimento: req.body.nascimento,
+                            nascimento: req.body.dataNascimento,
                             senha: req.body.senha
                          }
-                        new Register(novoRegistro).save().then(() =>{
-                            req.flash("success_msg", "Seu registro foi concluído com sucesso!")
-                            res.redirect('/')
+                         bcrypt.genSalt(10, (erro, salt) => {
 
-                        }).catch((err) =>{
-                            req.flash("error_msg", "Ocorreu um erro ao salvar seu registro! " + err)
-                            res.redirect('/registro')
-                    })
-            }
+                            bcrypt.hash(novoRegistro.senha, salt, (erro, hash) =>{
+                                if(erro){
+                                    req.flash("error_msg", " Houve um erro durante o salvamento do usuário!" + erro)
+                                    res.redirect('/')
+                                }
+                                else{
+                                    novoRegistro.senha = hash
+
+                                    new Register(novoRegistro).save().then(() =>{
+                                        req.flash("success_msg", "Seu registro foi concluído com sucesso!")
+                                        res.redirect('/')
+            
+                                    }).catch((err) =>{
+                                        req.flash("error_msg", "Ocorreu um erro ao salvar seu registro! " + err)
+                                        res.redirect('/registro')
+                                })
+                                }
+
+
+                            })
+
+                         })
+                         
+                    }
         }
         })})
 
@@ -142,32 +231,32 @@ const axios = require('axios')
 
 
     //Rota de Login
-        open.post('/login', (req, res) =>{
-            Register.findOne({email: req.body.email, senha: req.body.senha}).lean().then((login) =>{
-                if(login){
-                axios.post(`http://localhost:3000/login/${login._id}`).then(response =>{
-                    res.render('./login/indexlogin.handlebars', {register: login})
-                })
-                    
-                    
-                    
-                }else{
-
-                    req.flash("error_msg", "Erro ao entrar!")
-                    res.redirect('/')
-                }
-            })
+        open.get('/login', (req, res) =>{
+            res.render("./index/formlogin.handlebars")
         })
 
 
-        open.post('/login/:id', (req, res) =>{
-            Register.find().lean().then((register) =>{
-                res.render('./login/indexlogin.handlebars', {register: register})
+        open.post('/login', (req, res, next) =>{
+
+            //Função para autenticar!
+              
+                passport.authenticate("local", {
+                    
+                    successRedirect: '/user',
+                    failureRedirect: '/login',
+                    failureFlash: true
+                    })
+                    (req, res ,next)
+                   
         })
-            })
-            
 
     
+
+//Rota de Usuário Logado
+   const user = require('./routes/userlogin')
+
+   open.use('/user', user)
+
 
 
 //Rota Admin:

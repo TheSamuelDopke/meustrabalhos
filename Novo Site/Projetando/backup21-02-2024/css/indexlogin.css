@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 100px;
+    background-color: lightcyan;
+    width: 100%;
+}
+
+nav > div{
+    flex: 1 200px;
+    text-align: center;
+    padding-top: 30px;
+    margin: 10px;
+    background-color: lightblue;
+
+}

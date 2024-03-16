@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samo's Project</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/query.css">
+    <link rel="stylesheet" href="./css/msg.css">
+</head>
+<body>
+      <header> 
+
+        <a href="/"><h1>Samo's Projects</h1></a>
+            
+                <form id="loginForm" action="/login" method="post">
+                    
+                    <label for="idemail" class="configemail">Email:</label>
+                    <input type="email" name="email" id="idemail" class="configemail" autocomplete="email">
+                    <p id="nav-separator"></p>
+                    <label for="idsenha" class="configsenha" >Senha:</label>
+                    <input type="password" name="senha" id="idsenha" class="configsenha" autocomplete="current-password">
+                    <br>
+                    <button type="submit" id="entrar">Entrar</button>
+                    
+
+                    <p id="p-register">Não tem uma conta? <a href="/registro">Registre-se aqui</a></p>
+                </form>
+            
+   </header>
+       
+        {{#if success_msg}}
+            <div class="success_msg">{{success_msg}}</div>
+        {{/if}}
+
+
+        {{#if error_msg}}
+            <div class="error_msg">{{error_msg}}</div>
+        {{/if}}
+        
+    <main>
+        
+        <article id="apresentacao">
+            <h1>Olá, Visitante!</h1>
+            <hr>
+            <p>Boas-vindas, me chamo Samuel Pedro Dopke, e está é a página principal do meu site! </p>
+                <p>Após fazer seu registro e login no site, poderá acessar todos os meus projetos, fiz isso por uma questão de segurança.</p>
+            
+
+
+
+
+
+
+        </article>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+    
+
+
+    <footer>
+        <p>Todo esse site foi criado e projetado por: Samuel Pedro Dopke</p>
+
+    </footer>
+
+
+
+
+</body>
+</html>

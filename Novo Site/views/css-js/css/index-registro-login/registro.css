@@ -1,0 +1,186 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+main{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    background-image: url(img/paisagemLoginedit.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+}
+
+section{
+    background-color: rgb(237, 237, 237);
+    height: 570px;
+    width: 500px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.239);
+    padding: 0px;
+    
+    overflow: hidden;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div > input{
+    margin-top: 5px;
+    
+}
+
+div#divRegistroIndex{
+    width: 100%;
+    background-color: rgb(57, 57, 57);
+    height: auto;
+}
+
+div#divRegistroIndex > a{
+    color: lightgray;
+    text-decoration: none;
+}
+
+div#divRegistroIndex > a:hover{
+    color: white;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: auto;
+}
+
+div#divRegistroIndex > a > h1{
+    padding-top: 25px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: 35px;
+
+}
+
+section > h2, section > p{
+    text-align: center;
+}
+
+section > h2{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+div#divRegistro > form{
+    width: 90%;
+    text-align: center;
+    height: 300px;
+    
+    margin: auto;
+}
+
+div#divRegistro > form > div#divNomeData{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+div#divNomeData div input{
+    width: 219px;
+    height: 30px;
+    
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.439);
+}
+
+div#divNomeData div#nome input{
+    margin-right: 10px;
+}
+
+
+div#divEmailSenha input{
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.439);
+    text-align: center;
+}
+
+div#divEmail > input{
+    margin-bottom: 0px;
+}
+
+div#divSenha{
+    margin-top: 15px;
+}
+
+form > button{
+    width: 100%;
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    background-color: rgb(79, 79, 79);
+    color: lightgray;
+    border: none;
+    
+}
+
+form > button:hover{
+    background-color: rgb(111, 111, 111);
+    color: rgb(255, 255, 255);
+}
+
+form > p{
+    margin: 18px;
+    padding-bottom: 15px;
+}
+
+form > p > a{
+    color: rgb(129, 129, 129);
+}
+
+form > p > a:hover{
+    color: rgb(169, 169, 169);
+}
+
+
+@media screen and (max-width: 650px){
+    section{
+        width: 350px;
+    }
+
+    section > div#divRegistro{
+        width: 300px;
+        margin: auto;
+    }
+
+    div#divNomeData div input{
+        width: 130px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    section{
+        width: 90%;
+        height: 650px;
+        
+    }
+
+    section > div#divRegistro{
+        width: 200px;
+        margin: auto;
+        height: max-content;
+    }
+
+    div#divRegistro > form > div#divNomeData{
+        display: block;
+    }
+
+    div#divNomeData div input{
+        width: 100%;
+        
+    }
+}

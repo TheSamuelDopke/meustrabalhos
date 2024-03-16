@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samo's Projects - Registro</title>
+    <link rel="stylesheet" href="../css-js/css/index-registro-login/registro.css">
+</head>
+<body>
+
+    <main>
+            
+               
+            
+        <section class="indexsection">
+            
+            
+
+            <div id="divRegistroIndex">
+                <a href="/"><h1>Samo's Projects</h1></a>
+            </div>
+            <h2>Formulário de Registro</h2>
+            <p>Faça seu <strong>registro</strong> no site utilizando os campos abaixo:</p>
+
+            <div id="divRegistro">
+
+                <form action="/registro/add" method="post">
+                    <div id="divNomeData">
+                       <div id="nome">
+                            <label for="inputnome">Nome Completo:</label>
+                            <input type="text" name="inputnome" id="inputnome" placeholder="Seu nome" autocomplete="off" required>
+                            <p class="nomeerror"></p>
+                        </div>
+
+                        <div id="data">
+                            <label for="dataNascimento">Data de Nascimento:</label>
+                            <input type="date" name="dataNascimento" id="dataNascimento" autocomplete="off" required>
+                            <p class="dataNascimentoerror"></p>
+                        </div> 
+                    </div>
+                    
+
+                    <div id="divEmailSenha">
+                        <div id="divEmail">
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" id="email" placeholder="Seu email" autocomplete="off" required>
+                            <p class="emailerror"></p>
+                        </div>
+
+                        <div id="divSenha">
+                            <label for="senha">Senha:</label>
+                            <input type="password" name="senha" id="senha" placeholder="Sua senha" autocomplete="off" required>
+                            <p class="senhaerror"></p>
+                        </div>
+                    </div>
+                    
+
+
+                    <button type="submit" id="registrar-se">Registrar-se</button>
+                   
+                    {{>_msg}}
+                    
+                    <p>Já possui uma conta? <a href="/login">Faça o seu login aqui</a></p>
+                    
+                </form>
+
+            </div>
+
+        </section>
+    </main>
+
+
+  <script src="../css-js/js/index-registro-login/register.js"></script>  
+</body>
+
+</html>

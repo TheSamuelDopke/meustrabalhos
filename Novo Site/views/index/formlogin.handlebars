@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samo's Projects - Login</title>
+    <link rel="stylesheet" href="../css-js/css/index-registro-login/formlogin.css">
+    <link rel="stylesheet" href="../css-js/css/_msg/msg.css">
+</head>
+<body>
+
+    <main>
+        <section>
+        <div id="divIndex">
+            <a href="/"><h1>Samo's Projects</h1></a>
+        </div>
+       
+        <h2>Formulário de Login</h2>
+        <p>Faça seu <strong>login</strong> utilizando os campos abaixo:</p>
+
+        <div id="divForm">
+            <form action="/login" method="post">
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" placeholder=" Digite seu email"><br>
+                    
+                </div>
+                
+                <div>
+                   <label for="senha" class="classsenha">Senha:</label>
+                    <input type="password" name="senha" id="senha" placeholder=" Digite sua senha"> 
+                    
+                </div>
+                
+                    {{#if error}}
+                        <p class="loginerror">{{error}}</p>
+
+                    {{else}}
+
+                    {{/if}}
+
+                <button type="submit">Entrar</button><br>
+                    
+
+                <p>Não está registrado? <a href="/registro">Registre-se aqui</a></p>
+                <a href="/">Esqueceu a senha?</a>
+              
+            </form>
+               
+        </div>
+        
+            
+
+
+
+
+
+
+
+        </section>
+    </main>
+    
+</body>
+</html>

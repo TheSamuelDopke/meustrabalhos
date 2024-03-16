@@ -5,6 +5,11 @@ const router = require('express').Router() //Componente para criar rotas em arqu
 
 const mongoose = require('mongoose')
 
+//Carregando o Helper para identificar se o usuário está autenticado e é administrador!
+const {isadmin} = require("../helpers/isadmin")
+//Cria a variável eAdmin executando unicamente a função presente no caminho indicado ("../helpers/eAdmin")
+
+
 //Models:
     //Registro:
         require("../databases/register")

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra de Navegação</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        
+
+        /* Header */
+        header{
+            display: flex;
+            height: 100px;
+            background-color: rgb(57, 57, 57);
+            align-items: center;
+            width: 100%;
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.275);
+        }
+
+        header > div{
+            flex-direction: row;
+            margin: auto;
+            
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            align-items: center;
+            box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.105);
+        }
+
+        header .user > a > div {
+            width: 100%;
+            height: 100%;
+            margin: -10px 0px;
+            padding-top: 10px;
+            text-align: center;
+            align-items: center;
+            
+        }
+
+        header > div.user > a{
+            color: rgb(203, 202, 202);
+        }
+
+        header > .user > a > div:hover{
+            background-color: rgb(135, 135, 135);
+            cursor: pointer;
+            color: rgb(255, 255, 255);
+            .user > a{
+                color: white;
+            }
+        }
+
+        header > div > a > div > p{
+            padding-top: 30px;
+            font-size: 20px;
+            margin-top: 10px;
+            
+        }
+
+        header > div > a > h1{
+            margin-top: 30px;
+            margin-left: 10px;
+            max-height: fit-content;
+        }
+
+        header > div > a{
+            color: rgb(150, 150, 150);
+            text-decoration: none;
+        }
+
+        
+
+        div#index > a{
+            text-decoration: none;
+            color: rgb(150, 150, 150);
+        }
+
+        div#index > a:hover{
+            color: rgb(255, 255, 255);
+        }
+
+
+        div#menu{
+            display: none;
+        }
+
+
+        div#replace{
+            display: none;
+        }
+
+
+
+
+
+
+        /* Main */
+        body{
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            background-image: url(paisagemPrincipaledit.jpg);
+            background-repeat: no-repeat;
+            background-color: #ded9d97a;
+            background-size: cover;
+            background-position: center top;
+
+            
+        }
+
+        main{
+            height: 400px;
+            width: 600;
+            
+        }
+
+        main > h1{
+            text-align: center;
+            padding-top: 30px;
+            font-size: 30px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            padding-bottom: 30px;
+            color: black;
+            text-shadow: 1px 1px 10px white;
+        }
+
+        main > article#content{
+             width: auto;
+             background-color: rgba(200, 200, 200, 0);
+             border-radius: 20px;
+             margin-left: 70px;
+             margin-top: 50px;
+             padding: 10px;
+        }
+
+        main > article > p{
+            padding-left: 10px;
+            font-size: 25px;
+            line-height: 30px;
+            letter-spacing: 4px;
+            color: white;
+            margin: 15px 0px;
+            font-weight: bold;
+            
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-shadow: 0px 0px 15px rgb(0, 0, 0);
+        }
+
+        main > article > p > strong{
+            color: black;
+        }
+        
+        div#containerfooter{
+            position: fixed;
+            width: 100%;
+            bottom: 0px;
+            
+        }
+         
+        
+
+
+        footer{
+            
+           
+            width: 100%;
+            height: auto;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            font-size: 3vh;
+            text-align: center;
+            
+            
+        }
+
+        footer > p{
+            padding-top: 3px;
+        }
+
+
+
+       
+
+
+
+        @media screen and (min-width: 907px){
+            div#replace{
+                display: none;
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+        @media screen and (max-width: 907px){
+            body{
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            background-image: none;
+            
+            background-color: #807e7e7a;
+           
+        }
+
+        a{
+            color: rgb(150, 150, 150);
+            text-decoration: none;
+            
+        }
+
+        
+
+        main > article#content{
+            margin-left: 0px;
+            padding: 0px 20px;
+            
+        }
+
+        main > article#content > p{
+            margin: 15px 0px;
+            font-size: 20px;
+            color: white;
+        }
+
+        main > article#content > p > strong{
+            color: black;
+            text-shadow: 2px 2px white;
+        }
+
+            .user, #none{
+                display: none;
+            }
+
+            header{
+                flex-direction: column;
+                margin: auto;
+                padding: 0px;
+                width: 100vw;
+                height: auto;
+                text-align: center;
+                align-items: center;
+                padding-top: 10px;
+                
+            }
+
+            header > div#index > a > h1{
+                margin-top: 10px;
+            }
+
+            div#index{
+                
+                width: 96%;
+                height: max-content;
+                padding: 0px;
+                margin: 0px;
+                padding: 0px;
+                padding-bottom: 0px;
+                font-size: 23px;
+            }
+
+            div#menu{
+                display: block;
+                background-color: rgb(57, 57, 57);
+                height: max-content;
+                width: max-content;
+                margin-bottom: 20px;
+                margin-top: 10px;
+                
+            }
+
+            div#menu:hover{
+                .linha1, .linha2, .linha3{
+                    background-color: rgb(206, 206, 206);
+                }
+                
+            }
+
+            .linha1, .linha2, .linha3{
+                
+                background-color: rgb(119, 119, 119);
+                margin: 5px;
+                
+                height: 4px;
+                width: 30px;
+                
+            }
+
+           div#replace{
+            width: 100%;
+            height: max-content;
+            padding: 0px;
+            padding-top: 10px;
+            margin: 0px;
+            margin-top: 0px;
+            background-color: rgb(57, 57, 57);
+            text-align: center;
+           
+            display: none;
+            margin-bottom: 10px;
+           }
+
+           div#replace div.replacediv{
+            margin: 10px;
+            padding: 10px;
+            width: 98%;
+
+            color: rgb(150, 150, 150);
+            
+            margin: auto;
+            margin-bottom: 10px;
+            
+            background-color: rgb(88, 88, 88);
+            font-size: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+           }
+
+
+           div#replace div.replacediv:hover{
+            background-color: rgb(126, 126, 126);
+            cursor: pointer;
+            color: rgb(255, 255, 255);
+
+            a{
+                color: white;
+            }
+           }
+
+           div#menureplace{
+            
+            margin: auto;
+            height: max-content;
+            width: max-content;
+            margin-bottom: 10px;
+            display: none;
+           }
+
+           div#menureplace:hover{
+            .linha11, .linha22, .linha33{
+                background-color: rgb(126, 119, 119);
+            }
+           }
+
+           div#menureplace > div{
+            padding: 0;
+            width: 10%;
+            margin: 5px;
+            background-color: white;
+            height: 4px;
+            width: 30px;
+           }
+        }
+    </style>
+    
+</head>
+<body>
+    <header>
+        <div class="none" id="index"><a href="index.html"><h1>Samo's Projects</h1></a></div>
+        <div class="none" id="none"></div>
+        <div class="user"><a href="login.html"><div><p>Login</p></div></a></div>
+        <div class="user"><a href="registro.html"><div><p>Registre-se</p></div></a></div>
+
+        <div id="menu">
+            
+            <div class="linha1"></div>
+            <div class="linha2"></div>
+            <div class="linha3"></div>
+        
+        </div>
+        
+        <div id="replace">
+            <div id="menureplace">
+                <div class="linha11"></div>
+                <div class="linha22"></div>
+                <div class="linha33"></div>
+            </div>
+            <div class="replacediv"><p><a href="login.html">Login</a></p></div>
+            <div class="replacediv"><p><a href="registro.html">Registre-se</a></p></div>
+            
+
+        </div>
+
+        
+    </header>
+
+    <main>
+
+        <h1>Boas vindas ao meu projeto.</h1>
+        <hr>
+
+
+        
+        <article id="content">
+            <p>Seja bem-vindo.</p>
+            <p>Olá me chamo <strong>Samuel Pedro Dopke</strong> e desenvolvi totalmente este projeto.</p>  
+            <p>Para se conectar a minha rede de projetos você deve fazer o registro e login neste site.</p>
+        </article>
+
+        
+            
+
+        
+        
+
+
+    </main>
+
+    <div id="containerfooter">
+        <footer id="footer">
+                <p>Desenvolvedor: Samuel Pedro Dopke</p>
+        </footer>
+
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+        let menu = document.querySelector("#menu")
+
+        let replace = document.querySelector("#replace")
+
+        let menureplace = document.querySelector("#menureplace")
+
+        let footer = document.querySelector("#footer")
+
+        menu.addEventListener("click", responsivo)
+
+        menureplace.addEventListener("click", voltaresponsivo)
+
+       function responsivo(){
+        menu.style.display = "none"
+
+        replace.style.display = "block"
+
+        menureplace.style.display = "block"
+
+        footer.style.position = "absolute"
+                footer.style.bottom = "0px"
+       }
+        
+       function voltaresponsivo(){
+        menu.style.display = "block"
+
+        replace.style.display = "none"
+
+        menureplace.style.display = "none"
+
+        footer.style.position = "absolute"
+                footer.style.bottom = "0px"
+        
+       }
+        
+
+
+       window.addEventListener("resize", ocultarElemento)
+
+       function ocultarElemento() {
+            let larguraTela = window.innerWidth //Calcular sempre que a função resize ou seja o windows ver que a resolução foi modificada calcular para que largura ela foi.
+
+
+            
+            if(larguraTela > 907){
+                menu.style.display = "none"
+                replace.style.display = "none"
+                footer.style.position = "absolute"
+                footer.style.bottom = "0px"
+            }
+
+            if(larguraTela < 907 && menu.style.display == "none"){
+                menu.style.display = "block"
+            }
+
+            if(larguraTela < 907 && replace.style.display == "block"){
+                menu.style.display = "none"
+            }
+    }
+    </script>
+</body>
+</html>

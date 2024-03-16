@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samo's Projects</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        header{
+            height: 80px;
+            background-color: antiquewhite;
+            display: flex;
+            align-items: center;
+        }
+
+        header > div{
+            flex-direction: row;
+            flex: 1;
+            
+            text-align: center;
+        }
+
+        div#divLogin{
+            display: flex;
+            align-items: center;
+        }
+
+        div#divLogin > div{
+            flex-direction: row;
+            text-align: center;
+            margin: 0px 20px;
+        }
+
+        div#divMsg{
+            font-size: 20px;
+        }
+
+        div#formLogin > .email{
+            margin-bottom: 10px;
+        }
+
+        input .input{
+            background-color: rgb(184, 194, 203);
+        }
+
+        input.email, input.senha{
+            background-color: rgb(205, 216, 226);
+            border: none;
+            height: 20px;
+            border-radius: 20px;
+        }
+
+        input.email:hover, input.senha:hover{
+            background-color: rgb(248, 248, 248);
+            border: 0.5px solid black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>Samo's Projects</div>
+        
+        <div id="divLogin">
+            <div id="divMsg">Faça seu login:</div>
+            <div id="formLogin">
+                <label for="email" class="email">Email:</label>
+                <input type="email" name="email" id="email" class="email"><br>
+                <label for="senha" class="senha">Senha:</label>
+                <input type="password" name="senha" id="senha" class="senha">
+                <p>Faça seu registro aqui!</p> 
+            </div>
+            
+        </div>
+        
+    </header>
+
+    <main>
+
+    </main>
+</body>
+</html>
